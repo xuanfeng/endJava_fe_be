@@ -1,0 +1,25 @@
+{
+    "bar": "bar",
+    "userInfos": {
+        "items": [
+            {
+                "sex": "female",
+                "age": "111",
+                "name": "name 111"
+            },
+            {
+                "sex": "female",
+                "age": "222",
+                "name": "name 222"
+            },
+            {
+                "sex": "male",
+                "age": "333",
+                "name": "name 333"
+            }
+        ]
+    },
+    "varName": "xieshuai123",
+    "studentName": "xieshuai11111",
+    "num": 2
+}

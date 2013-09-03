@@ -1,0 +1,128 @@
+
+.box-shadow(@param1,@param2,@param3,@opacity){
+    -webkit-box-shadow: @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+    -moz-box-shadow: @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+    box-shadow: @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+}
+
+.border-radius(@radius){
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.inner-shadow(@param1,@param2,@param3,@opacity){
+    -webkit-box-shadow:inset @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+       -moz-box-shadow:inset @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+            box-shadow:inset @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+}
+
+.bg-gradient(@startColor,@endColor){
+    //background:@startColor;/* 应用于不支持颜色渐变的浏览器 */
+    background:@startColor/2 + @endColor/2;
+    filter:~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{startColor}', endColorstr='@{endColor}')";
+    background:-webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background:-moz-linear-gradient(top, @startColor, @endColor);
+}
+
+//-----------
+
+*{
+    margin: 0px;
+    font-size: 14px;
+}
+
+#nv_tools{
+    position: relative;
+}
+
+.sider_content{
+    position: absolute;
+    top: 0px;
+    left: -400px;
+    width: 400px; //完整为400px
+    height: 100%;
+    background-color: #fff;
+    z-index: 10;
+    .box-shadow(10px, 0, 10px, 0.1);
+
+    .show_hide{
+        position: absolute;
+        right: 0px;
+        top: 20px;
+        display: inline-block;
+        width: 32px;
+        height: 85px;
+        background: url(../images/sidebar_icon.png) 0 -85px repeat-x;
+        cursor: pointer;
+        margin-right: -32px;
+
+        &.hided{
+            -webkit-transform: rotate(180deg);
+        }
+    }
+
+    .opera{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 20px 0;
+        width: 400px;
+        border-bottom: 1px solid #ddd;
+        .input_fileName{
+            margin: 27px 10px 0 32px;
+        }
+        .new_file{
+            margin-top: 27px;
+        }
+        .tips{
+            opacity: 0;
+            margin: 5px 0 0 32px;
+            color: #EB182C;
+            width: 300px;
+            height: 21px;
+        }
+    }
+    .file_list_wrap{
+        position: absolute;
+        top: 124px;
+        left: 0px;
+        width: 390px;
+        padding: 20px 0 30px 10px ;
+        overflow: auto;
+        .file_list{
+            li{
+                margin: 3px 0 0 10px;
+                a{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+//对原页面的样式修改
+.content{
+    position: relative;
+
+    .status_info{
+        position: absolute;
+        top: -50px;
+        left: 150px;
+
+        .editing_file_name{
+            font-size: 20px;
+        }
+        .opera_tips{
+            font-size: 13px;
+            color: #EB182C;
+            margin-left: 30px;
+            opacity: 0;
+            width: 5em;
+        }
+    }
+}
+
+#bt_save{
+    visibility: hidden;
+}
