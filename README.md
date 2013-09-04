@@ -10,7 +10,7 @@ endJava_fe_be
 ###安装
 
 - clone项目
-- 在fe_endjava目录下新建'''views'''和'''public'''文件夹
+- 在fe_endjava目录下新建'views'和'public'文件夹
 - 建软链接
 	- views下面建jsp的软链接,public下面建less,js,img的软链接
 	- 命令是： mklink /D [目标地址] [源地址]
